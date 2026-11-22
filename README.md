@@ -2,82 +2,84 @@
 
 **SQL Server · Power BI · Excel · Business Intelligence**
 
-A sales analytics project built around the **AdventureWorks data warehouse**. It uses SQL to prepare sales-related tables, combines sales and budget data in Power BI, and presents interactive reporting to support sales performance analysis.
+This project is based on the AdventureWorks sales database. I used SQL Server to prepare the sales data, Excel to work with the sales budget, and Power BI to create a dashboard for analysing sales performance.
+
+The dashboard brings together sales and budget information so that different aspects of the business can be viewed in one place.
 
 ## Project Overview
 
-The project follows a business-intelligence workflow: understand the business request, prepare dimension and fact data in SQL Server, export cleaned tables, build a Power BI data model, and design a sales dashboard.
+The project starts with understanding the sales reporting requirements, preparing the required data in SQL Server and then using Power BI to build the dashboard.
 
-**Key analysis areas**
-- Sales trends over time
-- Customer and product performance
-- Sales versus budget
-- Geographic sales patterns
-- Top-performing products and customers
+The main areas covered in the project are:
 
-These describe the dashboard's intended analytical scope; no unverified revenue or performance improvement claims are made.
+- Sales trends over different time periods
+- Sales performance by customer and product
+- Actual sales compared with budget
+- Sales across different geographical locations
+- Top-selling products and customers
 
 ## Dashboard
 
 - **[View dashboard preview (PDF)](Sales%20Report.pdf)**
-- **[Download Power BI report (.pbix)](Sales%20Report.pbix)** — open in Power BI Desktop for interactive exploration.
+- **[Download Power BI report (.pbix)](Sales%20Report.pbix)** – Open the file in Power BI Desktop to explore the dashboard.
 
-> GitHub cannot display a Power BI `.pbix` dashboard interactively. The PDF provides a static report preview.
+> The PDF contains a static preview of the dashboard. To interact with the report, open the PBIX file in Power BI Desktop.
 
 ## Technology Stack
 
-| Tool | Role |
+| Tool | Usage |
 | --- | --- |
-| SQL Server / T-SQL | Clean and transform AdventureWorks warehouse tables |
-| Power BI | Data modeling, calculations and dashboard visualizations |
-| Excel | Sales budget input |
-| CSV | Cleaned data exports used for analysis |
-| Word | Business request, demand overview and user stories |
+| SQL Server / T-SQL | Preparing and cleaning sales data |
+| Power BI | Creating the data model and dashboard |
+| Excel | Working with sales budget data |
+| CSV | Storing the exported SQL tables |
+| Word | Business requirements and user stories |
 
 ## Repository Contents
 
-| File | Purpose |
+| File | Description |
 | --- | --- |
-| `DIM_Calendar_Clean.sql` | Prepare the calendar dimension |
-| `DIM_Customer_Clean.sql` | Prepare customer attributes |
-| `DIM_Product_Clean.sql` | Prepare product attributes |
-| `FACT_InternetSales_Clean.sql` | Prepare internet sales facts |
+| `DIM_Calendar_Clean.sql` | SQL script for preparing calendar data |
+| `DIM_Customer_Clean.sql` | SQL script for preparing customer data |
+| `DIM_Product_Clean.sql` | SQL script for preparing product data |
+| `FACT_InternetSales_Clean.sql` | SQL script for preparing internet sales data |
 | `DIM_Calendar_Export.csv` | Exported calendar data |
 | `DIM_Customer_Export.csv` | Exported customer data |
 | `DIM_Product_Export.csv` | Exported product data |
 | `FACT_InternetSales_Export.csv` | Exported internet sales data |
-| `Sent Over Data - SalesBudget.xlsx` | Sales budget spreadsheet |
-| `Sales Report.pbix` | Power BI report |
-| `Sales Report.pdf` | Static dashboard preview |
-| `Example Business Request.docx` | Example stakeholder request |
-| `Business Demand Overview & User Stories.docx` | Requirements and user stories |
+| `Sent Over Data - SalesBudget.xlsx` | Sales budget data |
+| `Sales Report.pbix` | Power BI dashboard |
+| `Sales Report.pdf` | Dashboard preview |
+| `Example Business Request.docx` | Business request document |
+| `Business Demand Overview & User Stories.docx` | Project requirements and user stories |
 
-## Workflow
+## Project Workflow
 
-1. **Define the business problem:** Review the business request and user stories to identify reporting needs.
-2. **Prepare data in SQL Server:** Use the four `*_Clean.sql` scripts to select and transform calendar, customer, product and internet sales data from the AdventureWorks warehouse.
-3. **Export the cleaned tables:** Use the four included `*_Export.csv` datasets as the prepared reporting inputs.
-4. **Build the data model:** Load the sales tables and the Excel budget into Power BI, connect relevant fact and dimension tables, and create calculations.
-5. **Design the dashboard:** Explore trends and breakdowns with charts, maps, tables and customer/product-level views.
+1. **Understanding the requirements:** Went through the business request and user stories to understand what information was needed in the sales report.
+2. **Data preparation using SQL:** Used SQL Server to prepare the calendar, customer, product and internet sales tables from the AdventureWorks data warehouse.
+3. **Exporting the data:** Exported the cleaned tables into CSV files for use in Power BI.
+4. **Working with Power BI:** Imported the CSV files and sales budget Excel file, created relationships between the tables and prepared the data model.
+5. **Dashboard creation:** Created charts, tables, maps and other visuals to display sales trends, budget comparisons and product and customer performance.
 
 ## Getting Started
 
-### View the finished dashboard
-Open [Sales Report.pdf](Sales%20Report.pdf) for a quick preview, or download [Sales Report.pbix](Sales%20Report.pbix) and open it in **Power BI Desktop**.
+### View the Dashboard
 
-### Recreate the data preparation
-1. Install **SQL Server** and **SQL Server Management Studio**.
-2. Download and restore a compatible **AdventureWorksDW** sample database using the [Microsoft AdventureWorks installation guide](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure).
-3. Review the four SQL scripts and adjust database names or schema references if needed before executing them.
-4. Export the prepared results, or use the included CSV exports.
-5. Open the Power BI report and update any local file paths or data-source settings as required.
+Open [Sales Report.pdf](Sales%20Report.pdf) to see the dashboard preview.
 
-The source project's setup instructions also reference an [AdventureWorksDW data-update script](https://github.com/techtalkcorner/SampleDemoFiles/blob/master/Database/AdventureWorks/Update_AdventureWorksDW_Data.sql). Review scripts before running them on your database.
+To explore the report, download [Sales Report.pbix](Sales%20Report.pbix) and open it using Power BI Desktop.
 
-## Business Value
+### Run the SQL Scripts
 
-The dashboard provides a consolidated view for exploring sales results against budget and drilling into customers, products and time periods. It is a demonstration analytics project, not evidence of an actual business deployment or measured commercial impact.
+1. Install SQL Server and SQL Server Management Studio.
+2. Download the AdventureWorksDW sample database using the [Microsoft AdventureWorks installation guide](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure).
+3. Restore the database in SQL Server.
+4. Open the four SQL scripts and run them to prepare the required tables. Change database or schema references if needed.
+5. Export the query results into CSV files, or use the CSV files already included in the repository.
+6. Open the Power BI file and update the data source paths if required.
 
-## Attribution
+The original project setup also refers to an [AdventureWorksDW data update script](https://github.com/techtalkcorner/SampleDemoFiles/blob/master/Database/AdventureWorks/Update_AdventureWorksDW_Data.sql). Review the script before running it.
 
-This repository is based on an existing Sales Analysis SQL/Power BI project. The supplied original README linked to [Mahijain1201/SalesAnalysis](https://github.com/Mahijain1201/SalesAnalysis). That reference is retained here to acknowledge the source; any independent modifications or contributions should be documented separately.
+## Project Outcome
+
+The final output is a Power BI dashboard that brings sales and budget data together. It allows users to compare sales with budget and look at performance across products, customers, locations and different time periods.
